@@ -1,7 +1,6 @@
-PyTorch == 1.6.0
-tqdm == 4.48.2
-numpy == 1.16.3
-tables == 3.6.1
+PyTorch
+tqdm
+numpy
+tables
 argparse
 loguru
-tables
