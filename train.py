@@ -102,7 +102,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_path', type=str, default='./data/', help='location of the data corpus')
     parser.add_argument('--model', type=str, default='JointEmbedder', help='model name')
-    parser.add_argument('--dataset', type=str, default='dataset/', help='name of dataset.java, python')
+    parser.add_argument('--dataset', type=str, default='github/', help='name of dataset.java, python')
     parser.add_argument('--reload_from', type=int, default=-1, help='epoch to reload from')
     parser.add_argument('--model_path', type=str, default='./model_save/', help='path of saving model')
     parser.add_argument('--mode', type=str, default='train')
@@ -112,7 +112,7 @@ def main():
     parser.add_argument('--best_mrr', type=float, default=0., help='The MRR metric.')
 
     parser.add_argument('--log_every', type=int, default=1000, help='interval to log autoencoder training results')
-    parser.add_argument('--valid_every', type=int, default=300000, help='interval to validation')
+    parser.add_argument('--valid_every', type=int, default=30000, help='interval to validation')
     parser.add_argument('--save_every', type=int, default=10000, help='interval to evaluation to concrete results')
 
     parser.add_argument('--sim_measure', type=str, default='cos', help='similarity measure for training')
