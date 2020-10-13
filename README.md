@@ -9,8 +9,6 @@ Successfully tested in Ubuntu 18.04
 - numpy == 1.16.3
 - tables == 3.6.1
 - argparse
-- loguru
-- tables
 
 # Code Structure
 - attention: Self-attention network and code-description network.
