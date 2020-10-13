@@ -79,6 +79,8 @@ def train(model, training_data, validation_data, optimizer, args, device):
     config = getattr(configs, 'config')()
 
     def save_model(model, path):
+        if not os.path.exists(path):
+            os.mkdir(path)
         torch.save(model.state_dict(), path)
 
     for epoch in range(args.Epoch):
