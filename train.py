@@ -94,11 +94,8 @@ def train(model, training_data, validation_data, optimizer, args, device):
         if best_mrr < valid_mrr:
             best_mrr = valid_mrr
             print("The current best mrr score is: ", best_mrr)
-            path = args.model_path + 'joint_embed_model_128_3.h5'
+            path = args.model_path + 'joint_embed_model.h5'
             save_model(model, path)
-
-        if epoch % 7 == 0:
-            optimizer = optim.AdamW(model.parameters(), lr=config['learning_rate']*0.1, eps=config['adam_epsilon'])
 
 
 def main():
@@ -162,7 +159,7 @@ def main():
         model = model.to(device)
         train(model, train_iter, valid_set, optimizer, args, device)
     elif args.mode == 'eval':
-        path = args.model_path + 'joint_embed_model_128_3.h5'
+        path = args.model_path + 'joint_embed_model.h5'
         load_model(model, path, device)
         model.to(device)
         start_time = time.time()
@@ -172,7 +169,7 @@ def main():
             search_time = time.time() - start_time
             query_time = search_time / 10000
             results = "k={}, re={}, acc={}, mrr={}, ndcg={}, q_time={}".format(k, re, acc, mrr, ndcg, query_time)
-            with open('result_joint_128_layer_3.txt', 'a') as f:
+            with open('result.txt', 'a') as f:
                 f.write(results + '\n')
             print("The search time of each query is: {}".format(query_time))
 
