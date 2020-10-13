@@ -35,4 +35,9 @@ Successfully tested in Ubuntu 18.04
   ```bash
   python train --mode eval
   ```
-  
+## References
+Here are some things I looked at while writing this model.
+
+- https://github.com/guxd/deep-code-search
+- https://github.com/jadore801120/attention-is-all-you-need-pytorch
+
