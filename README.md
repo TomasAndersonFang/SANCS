@@ -21,7 +21,7 @@ Successfully tested in Ubuntu 18.04
 ## Usage
 
   ### Data
-  In our experiments, we use the dataset shared by Xiao-dong gu. You can download this shared dataset from [Google Drive](https://drive.google.com/drive/folders/1GZYLT_lzhlVczXjD6dgwVUvDDPHMB6L7?usp=sharing) and add this dataset folder to `/data`.
+  In our experiments, we use the dataset shared by @guxd. You can download this shared dataset from [Google Drive](https://drive.google.com/drive/folders/1GZYLT_lzhlVczXjD6dgwVUvDDPHMB6L7?usp=sharing) and add this dataset folder to `/data`.
   
   ### Configuration
   Edit hyper-parameters and settings in `config.py`
