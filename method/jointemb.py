@@ -41,7 +41,7 @@ class JointEmbedder(nn.Module, ABC):
         self.desc_enc = Encoder(config['vocab_size'], config['d_word_dim'], config['n_layers'],
                                 config['n_heads'], config['d_k'], config['d_v'], config['d_model'],
                                 config['d_ffn'], config['pad_idx'])
-        self.code_enc = JointEncoder(config['n_heads'], config['d_k'], config['d_v'], config['d_model'],
+        self.joint_enc1 = JointEncoder(config['n_heads'], config['d_k'], config['d_v'], config['d_model'],
                                      config['d_ffn'])
         self.joint_enc2 = JointEncoder(config['n_heads'], config['d_k'], config['d_v'], config['d_model'],
                                        config['d_ffn'])
@@ -68,7 +68,7 @@ class JointEmbedder(nn.Module, ABC):
 
     def joint_encoding(self, repr1, repr2, repr3):
         batch_size = repr1.size(0)
-        code_repr = self.code_enc(repr1, repr2)
+        code_repr = self.joint_enc1(repr1, repr2)
         desc_pos_repr = self.joint_enc2(repr2, repr1)
         desc_neg_repr = self.joint_enc2(repr3, repr1)
         code_repr = torch.mean(self.fc_code(code_repr), dim=1)
